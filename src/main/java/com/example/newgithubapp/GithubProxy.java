@@ -9,7 +9,7 @@ public interface GithubProxy {
 
     // GET https://docs.github.com/en/rest?apiVersion=2022-11-28
     @GetMapping("/search")
-    String search(
+    String makeSearchRequest(
             @RequestParam("apiVersion") Integer apiVersion
     );
 }
