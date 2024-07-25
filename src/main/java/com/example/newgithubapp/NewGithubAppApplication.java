@@ -12,7 +12,7 @@ import org.springframework.context.event.EventListener;
 public class NewGithubAppApplication {
 
     @Autowired
-    GithubProxy githubProxy;
+    GithubProxy githubClient;
 
     public static void main(String[] args) {
         SpringApplication.run(NewGithubAppApplication.class, args);
@@ -20,6 +20,8 @@ public class NewGithubAppApplication {
 
     @EventListener(ApplicationStartedEvent.class)
     public void makeRequestToGithubEndPoint() {
+        String response = githubClient.makeSearchRequest(2022 - 11 - 28);
+        System.out.println(response);
 
     }
 
